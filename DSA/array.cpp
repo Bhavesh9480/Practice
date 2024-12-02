@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
 
@@ -45,4 +45,36 @@ int main() {
         cout << "Second largest element: " << secondLargest << endl;
     }
 
+}*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    void pushZerosToEnd(vector<int>& arr) {
+        int n = arr.size();
+        int j = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                swap(arr[i], arr[j]);
+                j++;
+            }
+        }
+    }
+};
+
+int main() {
+    vector<int> arr = {1, 2, 0, 0, 0, 3, 6};
+    Solution obj;
+    obj.pushZerosToEnd(arr);
+
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
 }
