@@ -80,7 +80,7 @@ int main() {
 }*/
 
 
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -107,4 +107,42 @@ int main() {
     }
 
     return 0;
+}*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class Solution {
+public:
+    void rotateArr(vector<int>& arr, int d) {
+        int n = arr.size();
+        d = d % n; // Handle cases where d is greater than n
+
+        // Reverse the first d elements
+        reverse(arr.begin(), arr.begin() + d);
+
+        // Reverse the remaining n-d elements
+        reverse(arr.begin() + d, arr.end());
+
+        // Reverse the entire array
+        reverse(arr.begin(), arr.end());
+    }
+};
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
+    int d = 2;
+
+    Solution obj;
+    obj.rotateArr(arr, d);
+
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
 }
+
