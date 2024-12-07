@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 
 using namespace std;
 
@@ -27,6 +27,38 @@ int main() {
     rectangle rect(5.0, 31.0); 
 
     rect.displayDetails();
+
+    return 0;
+}*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    // Parameterized constructor
+    Person(string name, int age) {
+        this->name = name;
+        this->age = age;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+
+int main() {
+    Person person1("Alice", 30);
+    Person person2("Bob", 25);
+
+    person1.display();
+    person2.display();
 
     return 0;
 }
