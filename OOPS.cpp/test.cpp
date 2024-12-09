@@ -31,7 +31,7 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+/*#include <iostream>
 #include <string>
 
 using namespace std;
@@ -59,6 +59,39 @@ int main() {
 
     person1.display();
     person2.display();
+
+    return 0;
+}*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    // Parameterized constructor
+    Student(string name, int age) {
+        this->name = name;
+        this->age = age;
+    }
+
+    // Copy constructor
+    Student(const Student& other) {
+        this->name = other.name;
+        this->age = other.age;
+    }
+};
+
+int main() {
+    Student student1("Alice", 20);
+    Student student2(student1); // Copy constructor is called
+
+    cout << "Student 1: " << student1.name << ", " << student1.age << endl;
+    cout << "Student 2: " << student2.name << ", " << student2.age << endl;
 
     return 0;
 }
