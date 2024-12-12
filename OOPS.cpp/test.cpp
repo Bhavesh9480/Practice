@@ -96,7 +96,7 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+/*#include <iostream>
 
 using namespace std;
 
@@ -122,4 +122,67 @@ int main() {
     }
 
     return 0;
+}*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class student
+{
+    public:
+        float sub[3];
+        string name;
+        float marks;
+        float per;
+        char grade;
+
+
+};
+
+int main()
+{
+
+    student st[3];
+    for (int i = 0; i < 3;i++)
+    {
+        float count=0;
+        cout << "Enter name : ";
+        cin >> st[i].name;
+       
+        for (int j = 0; j < 3;j++)
+        {
+            cout << "Enter sub "<<j+1<<" marks :";
+            cin >> st[i].sub[j];
+            count += st[i].sub[j];
+        }
+        //calculate percentage
+        st[i].per = (count / 300) * 100;
+    }
+    for (int i = 0; i < 3;i++)
+    {
+        //grades of student
+        if(st[i].per > 75)
+        {
+            st[i].grade = 'A';
+        }
+        else if(st[i].per >50)
+        {
+            st[i].grade = 'B';
+        }
+         else if(st[i].per >30)
+        {
+            st[i].grade = 'c';
+        }
+    }
+    //display
+    for (int i = 0; i < 3;i++)
+    {
+        cout << "Name: " << st[i].name << endl;
+        cout << "Percentage:" << st[i].per << endl;
+        cout << "Grade:" << st[i].grade << endl;
+    }
+
+        return 0;
 }
+
