@@ -124,7 +124,7 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 
@@ -184,5 +184,48 @@ int main()
     }
 
         return 0;
+}*/
+
+#include<iostream>
+using namespace std;
+
+class Student{
+    public:
+    string name;
+    float marks;
+    char grade;
+    void display();
+};
+char grade(float marks) {
+        if (marks >= 90)
+            return 'A';
+        else if (marks >= 80)
+            return 'B';
+        else if (marks >= 70)
+            return 'C';
+        else if (marks >= 60)
+            return 'D';
+        else
+            return 'F';
+    }
+void display(char grade ,string name , float marks) {
+    
+    cout << "Name: " << name<< endl;
+    cout << "Marks: " << marks << endl;
+    cout << "Grade: " << grade << endl;
+    }
+
+int main() {
+    Student st;
+    
+    cout << "Enter student name: ";
+    getline(cin, st.name);
+    cout << "Enter marks: ";
+    cin >> st.marks;
+
+   st.grade = grade(st.marks);
+   st.display();
+
+   return 0;
 }
 
