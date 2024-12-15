@@ -186,7 +186,7 @@ int main()
         return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 class Student{
@@ -227,5 +227,38 @@ int main() {
    st.display();
 
    return 0;
-}
+}*/
 
+//binary opretor overloading
+#include <iostream> 
+using namespace std; 
+ 
+class ComplexNumber { 
+    int real, imag; 
+ 
+public: 
+    ComplexNumber(int r = 0, int i = 0) : real(r), imag(i) {} 
+ 
+    // Overload unary ++ operator 
+    ComplexNumber operator++() { 
+        real++; 
+        imag++; 
+        return *this; 
+
+} 
+// Overload binary + operator 
+ComplexNumber operator+(const ComplexNumber &obj) { 
+return ComplexNumber(real + obj.real, imag + obj.imag); 
+} 
+void display() { 
+cout << real << " + " << imag << "i" << endl; 
+} 
+}; 
+int main() { 
+ComplexNumber c1(3, 4), c2(1, 2), c3; 
+++c1; 
+c1.display(); 
+c3 = c1 + c2; 
+c3.display(); 
+return 0; 
+}
