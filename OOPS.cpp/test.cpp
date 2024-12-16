@@ -230,7 +230,7 @@ int main() {
 }*/
 
 //binary opretor overloading
-#include <iostream> 
+/*#include <iostream> 
 using namespace std; 
  
 class ComplexNumber { 
@@ -261,4 +261,62 @@ c1.display();
 c3 = c1 + c2; 
 c3.display(); 
 return 0; 
+}*/
+
+#include <iostream>
+
+using namespace std;
+
+// Function templates for calculating volume
+template <typename T>
+T volume(T side) {
+    return side * side * side;
+}
+
+template <typename T>
+T volume(T radius, T height) {
+    return 3.14159 * radius * radius * height;
+}
+
+template <typename T>
+T volume(T length, T breadth, T height) {
+    return length * breadth * height;
+}
+
+int main() {
+    int choice;
+
+    cout << "Choose the shape:\n";
+    cout << "1. Cube\n";
+    cout << "2. Cylinder\n";
+    cout << "3. Rectangular Box\n";
+    cin >> choice;
+
+    switch (choice) {
+        case 1: {
+            int side;
+            cout << "Enter the side of the cube: ";
+            cin >> side;
+            cout << "Volume of the cube: " << volume(side) << endl;
+            break;
+        }
+        case 2: {
+            float radius, height;
+            cout << "Enter the radius and height of the cylinder: ";
+            cin >> radius >> height;
+            cout << "Volume of the cylinder: " << volume(radius, height) << endl;  
+            break;
+        }
+        case 3: {
+            int length, breadth, height;
+            cout << "Enter the length, breadth, and height of the rectangular box: ";
+            cin >> length >> breadth >> height;
+            cout << "Volume of the rectangular box: " << volume(length, breadth, height) << endl;
+            break;
+        }
+        default:
+            cout << "Invalid choice.\n";
+    }
+
+    return 0;
 }
