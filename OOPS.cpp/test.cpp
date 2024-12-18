@@ -321,3 +321,74 @@ int main() {
     return 0;
 }*/
 
+#include<iostream>
+using namespace std;
+
+class base1
+{
+    public:
+    void display()
+    {
+        cout << "Parent 1 is called :";
+    }
+};
+
+class base2
+{
+    public:
+    void display()
+    {
+        cout << "Parent 2 is called :";
+    }
+};
+
+class child : public base1 , public base2
+{
+    public:
+    void display()
+    {
+        cout << "I am a child class :";
+    }
+};
+
+int main()
+{
+    child Child;
+    Child.base1::display();
+    Child.base2::display();
+    Child.display();
+
+    return 0;
+}
+/*#include<iostream>
+using namespace std;
+
+class gcd
+{
+    public:
+    int n1,n2;
+
+    void input()
+    {
+        cout<<"Enter Two Number : ";
+        cin>>n1>>n2;
+    }
+
+    int calculate(int a,int b)
+    {
+        if(b==0)
+        return a;
+
+        return calculate(b, a % b);
+    }
+};
+
+int main()
+{
+    gcd calculator;
+    calculator.input();
+    int result = calculator.calculate(calculator.n1, calculator.n2);
+
+    cout << "Greatest Common Divisior is : " << result;
+    return 0;
+}*/
