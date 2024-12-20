@@ -321,7 +321,7 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 class base1
@@ -359,8 +359,9 @@ int main()
     Child.display();
 
     return 0;
-}
-/*#include<iostream>
+}*/
+
+#include<iostream>
 using namespace std;
 
 class gcd
@@ -391,4 +392,4 @@ int main()
 
     cout << "Greatest Common Divisior is : " << result;
     return 0;
-}*/
+}
