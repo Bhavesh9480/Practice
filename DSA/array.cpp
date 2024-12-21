@@ -109,7 +109,7 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -141,6 +141,67 @@ int main() {
 
     for (int i = 0; i < arr.size(); i++) {
         cout << arr[i] << " ";
+    }
+
+    return 0;
+}*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Stack {
+private:
+    vector<int> stack;
+
+public:
+    void push(int value) {
+        stack.push_back(value);
+    }
+
+    void pop() {
+        if (stack.empty()) {
+            cout << "Stack Underflow\n";
+            return;
+        }
+        stack.pop_back();
+    }
+
+    int top() {
+        if (stack.empty()) {
+            cout << "Stack is empty\n";
+            return -1; // Assuming -1 is not a valid stack value
+        }
+        return stack.back();
+    }
+
+    bool isEmpty() {
+        return stack.empty();
+    }
+
+    int size() {
+        return stack.size();
+    }
+};
+
+int main() {
+    Stack s;
+
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    cout << "Top element is: " << s.top() << "\n"; // Output: 3
+
+    s.pop();
+    cout << "Top element is: " << s.top() << "\n"; // Output: 2
+
+    s.pop();
+    s.pop();
+
+    if (s.isEmpty()) {
+        cout << "Stack is empty\n"; // Output: Stack is empty
     }
 
     return 0;
