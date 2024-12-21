@@ -146,64 +146,72 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
-#include <vector>
-
+#include<iostream>
+#include<vector>
 using namespace std;
 
-class Stack {
-private:
-    vector<int> stack;
-
-public:
-    void push(int value) {
-        stack.push_back(value);
+class stack
+{
+    private:
+        vector<int> Stack;
+    public:
+    void push(int element)
+    {
+        Stack.push_back(element);
     }
-
-    void pop() {
-        if (stack.empty()) {
-            cout << "Stack Underflow\n";
+    bool pop()
+    {
+        if(Stack.empty())
+        {
+            cout << "Stack underflow";
+            return false;
+        }
+        Stack.pop_back();
+    }
+    int top()
+    {
+        if(Stack.empty())
+        {
+            cout << "Stack is empty" << endl;
+            return -1;
+        }
+        else
+            return Stack.back();
+    }
+    void display()
+    {
+        if(Stack.empty())
+        {
+            cout << "No values for shown" << endl;
             return;
         }
-        stack.pop_back();
-    }
-
-    int top() {
-        if (stack.empty()) {
-            cout << "Stack is empty\n";
-            return -1; // Assuming -1 is not a valid stack value
+        for(int i = Stack.size()-1; i >=0; i--)
+        {
+            cout << Stack[i] << " ";
         }
-        return stack.back();
+        cout << endl;
     }
 
-    bool isEmpty() {
-        return stack.empty();
-    }
-
-    int size() {
-        return stack.size();
-    }
 };
 
-int main() {
-    Stack s;
-
-    s.push(1);
-    s.push(2);
-    s.push(3);
-
-    cout << "Top element is: " << s.top() << "\n"; // Output: 3
-
-    s.pop();
-    cout << "Top element is: " << s.top() << "\n"; // Output: 2
-
-    s.pop();
-    s.pop();
-
-    if (s.isEmpty()) {
-        cout << "Stack is empty\n"; // Output: Stack is empty
+int main()
+{
+    cout<<"Enter number you want to push in stack : ";
+    int n;
+    cin >> n;
+    stack s;
+    s.display();
+    for (int i = 0; i < n;i++)
+    {
+        cout << "Enter number " << i + 1 <<": ";
+        int x;
+        cin>>x;
+        s.push(x);
     }
+    cout << "Top element id : " << s.top() << endl;
+    s.pop();
+    cout << "Top element id : " << s.top() << endl;
+    s.display();
 
     return 0;
 }
-
