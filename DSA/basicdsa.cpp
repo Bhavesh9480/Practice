@@ -79,7 +79,6 @@ int main() {
     return 0;
 }*/
 
-
 /*#include <iostream>
 #include <vector>
 
@@ -146,7 +145,7 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 using namespace std;
 
@@ -214,4 +213,155 @@ int main()
     s.display();
 
     return 0;
+}*/
+
+/*#include<iostream>
+#define MAX 50
+using namespace std;
+
+class stack
+{
+    int Stack[MAX];
+    int top;
+
+    public:
+    stack()
+    {
+        top = -1;
+    }
+
+    bool push(int element)
+    {
+        if(top==MAX-1)
+        {
+            return false;
+        }
+        Stack[++top] = element;
+    }
+
+    void display()
+    {
+        for (int i = 0; i <= top; i++)
+        {
+            cout << Stack[i] <<" ";
+        }
+    }
+
+
+};
+
+int main()
+{
+    stack s;
+    s.push(5);
+    s.push(1);
+    s.push(7);
+    s.push(3);
+    s.push(9);
+    s.push(2);
+
+    s.display();
+
+    return 0;
+}*/
+
+#include<iostream>
+using namespace std;
+
+class Queue
+{
+    int front, rear, size;
+    int *Q;
+
+    public:
+    Queue(int size)
+    {
+       this-> size = size;
+       Q = new int[size];
+       front = rear = -1;
+    }
+
+    bool isfull()
+    {
+        return rear == size - 1;
+    }
+
+    bool isempty()
+    {
+        return front == -1 || front > rear;
+    }
+
+    void enqueue(int element)
+    {
+        if(isfull())
+        {
+            throw "Queue is full";
+            return;
+        }
+        if(front==-1)
+            front = 0;
+        Q[++rear] = element;
+    }
+
+    int dequeue()
+    {
+        if(isempty())
+        {
+            throw "Queue is empty";
+            return -1;
+        }
+        return Q[front++];
+    }
+
+    void display()
+    {
+        if(isempty())
+        {
+            throw "Nothing to display";
+            return;
+        }
+        for (int i = front; i <= rear;i++)
+        {
+            cout << Q[i] << " ";
+        }
+    }
+
+    ~Queue()
+    {
+        delete[] Q;
+    }
+};
+
+int main()
+{
+    int n;
+    cout << "Enter size of Queue :";
+    cin >> n;
+    Queue q(n);
+    try
+    {
+    
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+    q.enqueue(6);
+    q.enqueue(7);
+    q.enqueue(8);
+    q.enqueue(9);
+    q.enqueue(10);
+    q.dequeue();
+    q.dequeue();
+    
+
+    q.display();
+    }
+    catch(const char* msg)
+    {
+        cout << msg << endl;
+    }
+
+    return 0;
 }
+
