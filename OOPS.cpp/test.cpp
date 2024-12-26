@@ -361,7 +361,7 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 class gcd
@@ -391,5 +391,73 @@ int main()
     int result = calculator.calculate(calculator.n1, calculator.n2);
 
     cout << "Greatest Common Divisior is : " << result;
+    return 0;
+}*/
+
+
+/*#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Book {
+    string name;
+    int pages;
+    float price;
+};
+
+int main() {
+    Book books[3];
+
+    for (int i = 0; i < 3; ++i) {
+        cout << "Enter details for book " << i + 1 << ":" << endl;
+        cout << "Name: ";
+        getline(cin, books[i].name);
+        cout << "Pages: ";
+        cin >> books[i].pages;
+        cout << "Price: ";
+        cin >> books[i].price;
+        cin.ignore();
+    }
+
+    cout << "\nBook Details:\n";
+    for (const auto& book : books) {
+        cout << "Name: " << book.name << endl;
+        cout << "Pages: " << book.pages << endl;
+        cout << "Price: " << book.price << endl;
+    }
+
+    return 0;
+}*/
+
+#include <iostream>
+
+using namespace std;
+
+inline int multiply(int a, int b) {
+    return a * b;
+}
+
+inline int divide(int a, int b) {
+    if (b == 0) {
+        cout << "Error: Division by zero" << endl;
+        return 0;
+    } else {
+        return a / b;
+    }
+}
+
+int main() {
+    int num1, num2;
+
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    int product = multiply(num1, num2);
+    int quotient = divide(num1, num2);
+
+    cout << "Product: " << product << endl;
+    cout << "Quotient: " << quotient << endl;
+
     return 0;
 }
