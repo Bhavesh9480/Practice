@@ -430,7 +430,8 @@ int main() {
     return 0;
 }*/
 
-#include <iostream>
+//Inline Function
+/*#include <iostream>
 
 using namespace std;
 
@@ -458,6 +459,37 @@ int main() {
 
     cout << "Product: " << product << endl;
     cout << "Quotient: " << quotient << endl;
+
+    return 0;
+}*/
+
+//Friend Function
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    double width;
+
+public:
+    // Constructor to initialize width
+    Box(double w) : width(w) {}
+
+    // Friend function declaration
+    friend void printWidth(Box box);
+};
+
+// Friend function definition
+void printWidth(Box box) {
+    // Accessing private member width
+    cout << "Width of the box: " << box.width << endl;
+}
+
+int main() {
+    Box box1(10.5);  // Create an object of Box with width 10.5
+
+    // Call the friend function
+    printWidth(box1);
 
     return 0;
 }
