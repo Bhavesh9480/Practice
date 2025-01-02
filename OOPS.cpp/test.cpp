@@ -522,7 +522,7 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 
@@ -583,5 +583,43 @@ int main()
     b.display();
     b.ones();
     b.display();
+    return 0;
+}*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class student
+{
+    int id;
+    string name;
+    static int count;
+
+    public:
+
+    void setdata()
+    {
+        cout << "Enter id and Name: ";
+        cin >> id >> name;
+        count++;
+    }
+    void getdata()
+    {
+        cout << "Details : \n"
+             << "id: " << id << " name: " << name << "  Total :" << count <<endl;
+    }
+};
+
+//int student::count;
+
+int main()
+{
+    student s[5];
+    for(int i = 0; i < 5; i++)
+    {
+        s[i].setdata();
+        s[i].getdata();
+    }
     return 0;
 }
