@@ -494,7 +494,7 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 using namespace std;
 class Solution {
@@ -519,5 +519,69 @@ int main() {
     int target = 13;
     vector<int> result = soul.twoSum(nums1, target);
     cout << "[" << result[0] << "," << result[1] << "]";
+    return 0;
+}*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class binary
+{
+    string s;
+    public:
+        void read();
+        void check();
+        void ones();
+        void display();
+};
+
+void binary::read()
+{
+    cout << "Enter a binary number : ";
+    cin >> s;
+}
+void binary ::check()
+{
+    for (int i = 0; i < s.length();i++)
+    {
+        if(s[i]!='0' && s[i]!='1')
+        {
+            cout << "Invalid" << endl;
+            exit(0);
+        }
+    }
+}
+void binary::ones()
+{
+    for (int i = 0; i < s.length();i++)
+    {
+        if(s[i] == '1')
+        {
+            s[i] = '0';
+        }
+        else if(s[i]=='0')
+        {
+            s[i] = '1';
+        }
+    }   
+}
+void binary::display()
+{
+    for (int i = 0; i < s.length();i++)
+    {
+        cout << s[i];
+    }
+    cout << endl;
+}
+
+int main()
+{
+    binary b;
+    b.read();
+    b.check();
+    b.display();
+    b.ones();
+    b.display();
     return 0;
 }
