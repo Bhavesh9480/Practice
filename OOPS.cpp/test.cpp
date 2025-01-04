@@ -586,7 +586,8 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+//Static
+/*#include<iostream>
 #include<string>
 using namespace std;
 
@@ -621,5 +622,45 @@ int main()
         s[i].setdata();
         s[i].getdata();
     }
+    return 0;
+}*/
+
+//Complex Number Using Friend Function
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real;
+    float imag;
+
+public:
+    Complex() : real(0), imag(0) {}
+
+    Complex(float r, float i) : real(r), imag(i) {}
+
+    // Friend function declaration
+    friend Complex addComplex(const Complex& c1, const Complex& c2);
+
+    void display() const {
+        cout << "Real: " << real << ", Imaginary: " << imag << endl;
+    }
+};
+
+Complex addComplex(const Complex& c1, const Complex& c2) {
+    Complex result;
+    result.real = c1.real + c2.real;
+    result.imag = c1.imag + c2.imag;
+    return result;
+}
+
+int main() {
+    Complex c1(3.2, 4.5);
+    Complex c2(1.3, 2.7);
+    Complex sum = addComplex(c1, c2);
+
+    cout << "Sum of complex numbers: ";
+    sum.display();
+
     return 0;
 }
