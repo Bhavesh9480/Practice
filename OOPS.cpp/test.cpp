@@ -626,7 +626,7 @@ int main()
 }*/
 
 //Complex Number Using Friend Function
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 class Complex {
@@ -662,5 +662,91 @@ int main() {
     cout << "Sum of complex numbers: ";
     sum.display();
 
+    return 0;
+}*/
+
+/*#include<iostream>
+using namespace std;
+
+class calculate
+{
+    int a, b;
+    public:
+        void setdata(int a, int b)
+        {
+            this->a = a;
+            this->b = b;
+        }
+        friend class sum;
+};
+class sum
+{
+    int sum;
+
+public:
+    int add(calculate obj)
+    {
+       return obj.a + obj.b;
+    }
+};
+
+int main()
+{
+    calculate calc1;
+    sum s1;
+    calc1.setdata(10,20);
+    cout << "Sum : " << s1.add(calc1)<<endl;
+
+    return 0;
+}*/
+
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+class book
+{
+    string title;
+    string author;
+    int publicationyear;
+
+    friend class library;
+  
+};
+
+class library
+{
+    vector<book> b;
+    public:
+    void addnewbook(string title,string author,int year)
+    {
+        book newbook;
+        newbook.title=title;
+        newbook.author=author;
+        newbook.publicationyear=year;
+        b.push_back(newbook);
+    }
+    void display()
+    {
+        for (const auto &i : b)
+        {
+            cout << "Details for Book : "<<endl;
+            cout << i.title << "\n"
+                 << i.author << "\n"
+                 << i.publicationyear << endl;
+        }
+    }
+
+};
+
+
+int main()
+{
+    library lib;
+    lib.addnewbook("Book1","Author1",2010);
+    lib.addnewbook("Book2","Author2",2015);
+    lib.display();
+    
     return 0;
 }
