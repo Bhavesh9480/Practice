@@ -700,7 +700,7 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<string>
 #include<vector>
 using namespace std;
@@ -747,6 +747,50 @@ int main()
     lib.addnewbook("Book1","Author1",2010);
     lib.addnewbook("Book2","Author2",2015);
     lib.display();
+    
+    return 0;
+}*/
+
+//Polymorphism
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    virtual void makeSound() {
+        cout << "Some generic animal sound\n";
+    }
+};
+
+// Derived class
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        cout << "Woof Woof\n";
+    }
+};
+
+// Derived class
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        cout << "Meow Meow\n";
+    }
+};
+
+int main() {
+    Animal* a1 = new Animal();
+    Animal* a2 = new Dog();
+    Animal* a3 = new Cat();
+
+    a1->makeSound();  
+    a2->makeSound();  
+    a3->makeSound();  
+
+    delete a1;
+    delete a2;
+    delete a3;
     
     return 0;
 }
