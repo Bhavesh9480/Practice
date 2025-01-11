@@ -752,7 +752,7 @@ int main()
 }*/
 
 //Polymorphism
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 // Base class
@@ -792,5 +792,80 @@ int main() {
     delete a2;
     delete a3;
     
+    return 0;
+}*/
+
+//File handling
+/*#include<iostream>
+#include<fstream>
+
+// The classes used for file handling are :
+// 1.fstreambase
+// 2.ifstream-->derived from fstreambase
+// 2.ofstream-->derived from fstreambase
+
+// There are two ways to open file
+// 1.Using constructor
+// 2.Using member function open() function of the class
+
+
+using namespace std;
+
+int main()
+{
+    string sh="Bhavesh Suthar";
+    string sh2;
+    // Opening file using constructor
+    ofstream out("sample.txt"); // Write opretion
+    out << sh;// Writing data to file
+    out.close();
+
+    ifstream in("sample.txt"); // Read operation
+    //in >> sh2;
+    getline(in, sh2);
+    cout << sh2;
+    return 0;
+}*/
+
+//C++ program to take twenty integer inputs, store even numbers in a file named "Even", and odd numbers in a file named "Odd". Then it will read the contents of each file and print them:
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    ofstream even("Even.txt"), odd("Odd.txt");
+    int num[10];
+    cout << "Enter 20 integer values"<<endl;
+    for (int i = 0; i < 10;i++)
+    {
+        cin >> num[i];// Taking 10 integer inputs
+        if(num[i]%2==0)
+        {
+            even << num[i] << endl;
+        }
+        else
+        {
+            odd << num[i] << endl;
+        }
+    }
+    even.close();
+    odd.close();
+
+    string line;
+    ifstream file1("Even.txt"), file2("Odd.txt");
+    cout << "Even numbers are: "<<endl;
+    while(getline(file1, line))
+    {
+        cout << line << endl;
+    }
+    file1.close();
+    cout << "Odd numbers are: "<<endl;
+    while(getline(file2, line))
+    {
+        cout << line << endl;
+    }
+    file2.close();
+
     return 0;
 }
