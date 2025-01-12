@@ -828,7 +828,7 @@ int main()
 }*/
 
 //C++ program to take twenty integer inputs, store even numbers in a file named "Even", and odd numbers in a file named "Odd". Then it will read the contents of each file and print them:
-#include<iostream>
+/*#include<iostream>
 #include<fstream>
 using namespace std;
 
@@ -868,4 +868,26 @@ int main()
     file2.close();
 
     return 0;
-}
+}*/
+
+//For copying one file data tto anathoer file
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    ifstream main("main.txt");
+    ofstream copy("copy.txt");
+
+    // string sh = "The only limit to our realization of tomorrow is our doubts of today. Let us move forward with strong and active faith. The future belongs to those who believe in the beauty of their dreams.";
+    string line;
+   while(getline(main,line))
+   {
+       copy << line << endl;
+   }
+   main.close();
+   copy.close();
+
+   return 0;
+}*/
