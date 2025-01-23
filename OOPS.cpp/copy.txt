@@ -1,2 +1,2 @@
 Write a program to read the content of a text file line by line and display it on the console. After that, write the same content to another file.
-He how are you i am a second line of code
+He how are you i am a second line of code hello how

@@ -882,12 +882,113 @@ int main()
 
     // string sh = "The only limit to our realization of tomorrow is our doubts of today. Let us move forward with strong and active faith. The future belongs to those who believe in the beauty of their dreams.";
     string line;
-   while(getline(main,line))
-   {
-       copy << line << endl;
+    int countword = 0;
+    int charcount = 0;
+    while (getline(main, line))
+    {
+        countword += line.length();
+
+        copy << line << endl;
    }
+   cout << "No of words count are : " << countword;
    main.close();
    copy.close();
 
    return 0;
 }*/
+
+/*#include<iostream>
+using namespace std;
+//template<class T>
+class vector
+{
+    public:
+    int *arr;// pointer to the array
+    int size;
+
+
+    vector(int m)
+    {
+        size = m;
+        arr=new int[size];
+    }
+    int sumvec(vector &v)
+    {
+        int s = 0;
+        for (int i = 0; i < size;i++)
+        {
+            s += this->arr[i]+v.arr[i];
+        }
+        return s;
+    }
+};
+
+int main()
+{
+    vector v1(5);
+    v1.arr[0] = 1;
+    v1.arr[0] = 2;
+    v1.arr[0] = 3;
+    v1.arr[0] = 4;
+    v1.arr[0] = 5;
+
+    vector v2(5);
+    v1.arr[0] = 1;
+    v1.arr[0] = 2;
+    v1.arr[0] = 3;
+    v1.arr[0] = 4;
+    v1.arr[0] = 5;
+
+    int a = v1.sumvec(v2);
+    cout << a << endl;
+    return 0;
+}*/
+
+#include<iostream>
+using namespace std;
+
+template<typename t>
+class vector
+{
+    public:
+    t *arr;
+    int size;
+
+    vector(int m)
+    {
+        size = m;
+        arr = new t[size];
+    }
+    t sum()
+    {
+        t s = 0;
+        for (int i = 0; i < size;i++)
+        {
+            s += arr[i];
+        }
+        return s;
+    }
+    ~vector()
+    {
+        delete[] arr;
+    }
+};
+
+int main()
+{
+    vector<int> v1(3);
+    v1.arr[0] = 1;
+    v1.arr[1] = 2;
+    v1.arr[2] = 3;
+    int s = v1.sum();
+    cout<<"sum of integers : "<<s<<endl;
+
+    vector<double> v2(3);
+    v2.arr[0] = 4.009586;
+    v2.arr[1] = 5.5143992;
+    v2.arr[2] = 6.5567834;
+    double sd = v2.sum();
+    cout<<"sum of doubles : "<<sd<<endl;
+
+    return 0;
+}
