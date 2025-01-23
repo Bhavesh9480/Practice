@@ -1015,7 +1015,7 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<exception>
 using namespace std;
 
@@ -1049,4 +1049,45 @@ int main()
     
 
     return 0;
+}*/
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+class employee
+{
+    public:
+        static int count;
+        vector<string> name;
+        employee(string name)
+        {
+            this->name.push_back(name);
+            count++;
+        }
+
+};
+int employee::count = 0;
+
+int main()
+{
+    vector<employee> emp;
+    string name;
+    
+    cout << "When You want to end press e" << endl;
+    cout << "Now enter names"<<endl;
+while(true)
+{
+    
+    cout << "Name : ";
+    cin >> name;
+    if(name == "e")
+    {
+        break;
+    }
+    emp.push_back(employee(name));
 }
+cout << "Total employee count : " << employee::count;
+return 0;
+}
+
