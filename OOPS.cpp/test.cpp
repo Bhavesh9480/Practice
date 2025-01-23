@@ -944,7 +944,7 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 template<typename t>
@@ -989,6 +989,64 @@ int main()
     v2.arr[2] = 6.5567834;
     double sd = v2.sum();
     cout<<"sum of doubles : "<<sd<<endl;
+
+    return 0;
+}*/
+
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    string sh = "Bhavesh Suthar Is a good boy  ";
+    string st = "How can I Help you ?   ";
+
+    ofstream out("sample.txt");
+    out << sh;
+    out << st;
+    out.close();
+
+    ifstream in("sample.txt");
+    string s;
+    getline(in, s);
+    cout << s;
+
+    return 0;
+}*/
+
+#include<iostream>
+#include<exception>
+using namespace std;
+
+int result(int a)
+{
+if(a%2==0)
+{
+    return 1;
+}
+else
+{
+    throw runtime_error("Provided No is odd");
+}
+}
+
+int main()
+{
+    int a;
+    cout << "Enter a no to check even or odd : ";
+    cin >> a;
+
+    try
+    {
+        int fresult = result(a);
+        cout << "Result is even" ;
+    }
+    catch(const runtime_error & e)
+    {
+        cout << e.what() << '\n';
+    }
+    
 
     return 0;
 }
