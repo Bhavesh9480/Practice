@@ -897,6 +897,7 @@ int main()
    return 0;
 }*/
 
+//Template
 /*#include<iostream>
 using namespace std;
 //template<class T>
@@ -944,6 +945,7 @@ int main()
     return 0;
 }*/
 
+//Template
 /*#include<iostream>
 using namespace std;
 
@@ -993,6 +995,7 @@ int main()
     return 0;
 }*/
 
+//Fstream
 /*#include<iostream>
 #include<fstream>
 using namespace std;
@@ -1015,6 +1018,7 @@ int main()
     return 0;
 }*/
 
+//Exception Handling
 /*#include<iostream>
 #include<exception>
 using namespace std;
@@ -1051,7 +1055,8 @@ int main()
     return 0;
 }*/
 
-#include<iostream>
+//Staticdata members
+/*#include<iostream>
 #include<vector>
 using namespace std;
 
@@ -1064,6 +1069,10 @@ class employee
         {
             this->name.push_back(name);
             count++;
+        }
+        static void getcount()
+        {
+            cout << "counted employee are : " << count << endl;
         }
 
 };
@@ -1087,7 +1096,173 @@ while(true)
     }
     emp.push_back(employee(name));
 }
-cout << "Total employee count : " << employee::count;
+ employee::getcount();
 return 0;
-}
+}*/
 
+//Multiple Inheritance
+/*#include<iostream>
+using namespace std;
+
+class A
+{
+    public:
+    A()
+    {
+        cout << "I am class A"<<endl;
+    }
+};
+class B
+{
+    public:
+    B()
+    {
+        cout << "I am class B"<<endl;
+    }
+};
+class C : public A , public B
+{
+    public:
+    C()
+    {
+        cout << "I am class C"<<endl;
+    }
+};
+
+int main()
+{
+    C c;
+
+    return 0;
+}*/
+
+//Hierarchial Inheritance
+/*#include<iostream>
+using namespace std;
+
+class A
+{
+    public:
+    void show()
+    {
+        cout << " I am parent class";
+    }
+};
+
+class B:public A
+{
+
+};
+class C:public A
+{
+    
+};
+class D:public A
+{
+    
+};
+
+int main()
+{
+    D d;
+    d.show();
+
+    return 0;
+}*/
+
+
+//Ambiguity can solve using scope resolution opretor
+/*#include<iostream>
+using namespace std;
+
+class A 
+{
+    public:
+    void show()
+    {
+        cout << "class A";
+    }
+};
+class B 
+{
+    public:
+    void show()
+    {
+        cout << "class B";
+    }
+};
+class C : public A , public B 
+{
+    public:
+    void show()
+    {
+        cout << "class C";
+    }
+};
+
+
+int main()
+{
+    C c;
+    c.show();
+    return 0;
+}*/
+
+//Virtual Base class
+/*#include<iostream>
+using namespace std;
+
+class A 
+{
+    public:
+    void show()
+    {
+        cout << "I am class A";
+    }
+};
+class B : virtual public A
+{
+};
+
+class C : virtual public A 
+{
+};
+
+class D : public B , public C
+{
+};
+
+int main()
+{
+    D d;
+    d.show();
+
+    return 0;
+}*/
+
+//gcd
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout << "----------------Greatest common Divisior-----------------" << endl;
+    int a,b;
+    cout << "Enter two numbers : ";
+    cin >> a >> b;
+    int n = (a > b) ? a : b, greatest = 0;
+    for (int i = 1; i <= n;i++)
+    {
+        if (a % i == 0 && b % i == 0)
+        {
+            if(i>greatest)
+            {
+                greatest = i;
+            }
+            
+        }
+    }
+    cout << "Greatest common divisior is : " << greatest << endl;
+
+    return 0;
+}
