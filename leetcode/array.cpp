@@ -35,7 +35,7 @@ public:
 };*/
 
 
-class Solution {
+/*class Solution {
 public:
     bool isValid(string s) {
      
@@ -61,5 +61,28 @@ public:
         return true;
     }
     return false;
+    }
+};*/
+
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        // Reverse the string
+        reverse(s.begin(), s.end());
+
+        int length = 0;
+        bool wordFound = false;
+
+        // Iterate through the reversed string from the beginning
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] != ' ') {
+                wordFound = true;
+                length++;
+            } else if (wordFound) {
+                break;
+            }
+        }
+
+        return length;
     }
 };
