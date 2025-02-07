@@ -20,7 +20,7 @@ public:
 };*/
 
 // 27 Remove Element
-class Solution {
+/*class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
         int i = 0;
@@ -31,5 +31,35 @@ public:
             }
         }
         return i;
+    }
+};*/
+
+
+class Solution {
+public:
+    bool isValid(string s) {
+     
+     if(s.empty())
+     {
+        return true;
+     }
+     stack<char> opning;
+     stack<char> closing;
+     for(int i=0;i<s.size();i++)
+     {
+        if(s[i]=='['||s[i]=='{'||s[i]=='(')
+        {
+            opning.push(s[i]);
+        }
+        else if(s[i]==']'||s[i]=='}'||s[i]==')')
+        {
+            closing.push(s[i]);
+        }
+     }
+    if(opning.size()==closing.size())
+    {
+        return true;
+    }
+    return false;
     }
 };
