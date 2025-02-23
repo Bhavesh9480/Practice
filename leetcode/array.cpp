@@ -34,7 +34,7 @@ public:
     }
 };*/
 
-
+//20. Valid Parentheses
 /*class Solution {
 public:
     bool isValid(string s) {
@@ -64,7 +64,7 @@ public:
     }
 };*/
 
-
+// 58. Length of last word
 /*class Solution {
 public:
     int lengthOfLastWord(string s) {
@@ -87,6 +87,7 @@ public:
         return length;
     }
 };*/
+
 //13. Roman to Integer
 /*class Solution {
 public:
@@ -147,7 +148,7 @@ public:
 };*/
 
 //12. Integer to roman
-class Solution {
+/*class Solution {
 public:
     string intToRoman(int num) {
         unordered_map<int, string> intToRomanMap = {
@@ -168,5 +169,19 @@ public:
         }
         return s;
 
+    }
+};*/
+
+//136. Single number
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        
+        int no=0;
+        for(int num : nums)
+        { 
+            no=no^num;
+        }
+        return no;
     }
 };
